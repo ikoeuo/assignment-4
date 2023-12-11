@@ -12,7 +12,7 @@ def save_data():
 def load_data():
     try:
         with open(data_file, 'r') as file:
-            json.load(file)
+             return json.load(file)
 
     except FileNotFoundError:
         return defaultdict(list)
@@ -24,13 +24,13 @@ def create_item(category, title, author, genre):
     print(f'{category} has been added!')
 
 
-def list_item(category):
+def list_items(category):
     items = data[category]
-    if not items: 
-        print(f'{category} was not found in the list.')
-    else: 
-        for i, item in enumerate(items, start = 1):
-            print(f'{category} #{i}: {item}')
+    if not items:
+        print(f'{category} not found')
+    else:
+        for i, item in enumerate(items, start=1):
+            print(f'{category} {i}: {item}')
 
 def update_item(category, index, title, author, genre):
     items = data[category]
@@ -54,3 +54,7 @@ def delete_item(category, index):
         print(f'{category} has been deleted.')
     else:
         print(f'Invalid {category}')
+
+
+
+
