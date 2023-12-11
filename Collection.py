@@ -32,10 +32,19 @@ def list_item(category):
         for i, item in enumerate(items, start = 1):
             print(f'{category} #{i}: {item}')
 
+def update_item(category, index, title, author, genre):
+    items = data[category]
+    if 0 <= index < len(items):
+        item = items[index]
+        item['Title'] = title
+        item['Author'] = author
+        item['Genre'] = genre
+        save_data()
+        print(f'{category} has been updated')
+
+    else:
+        print{f'Invalid {category}'}
     
 
-def delete_item():
-    pass
-
-def update_item():
+def delete_item(category, index):
     pass
