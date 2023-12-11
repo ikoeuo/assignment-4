@@ -6,7 +6,7 @@ def main():
     while True:
         
         print('1. Create Item \n2. List Item(s) \n3. Update Item \n4.Delete Item \n5. Exit App')
-        choice = input('What would you like to do (1-4): ')
+        choice = input('What would you like to do (1-5): ')
 
 
         if choice == 1:
