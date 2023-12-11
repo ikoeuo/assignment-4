@@ -9,18 +9,18 @@ def main():
         choice = input('What would you like to do (1-5): ')
 
 
-        if choice == 1:
+        if choice ==1:
             category = input('Enter category: ')
             title = input('Enter title: ')
             author = input('Enter author: ')
             genre = input('Enter genre: ')
             Collection.create_item(category, title, author, genre)
 
-        if choice == 2:
+        elif choice ==2:
             category = input('Enter category (books, cards, or cds): ').lower
             Collection.read_items(category)
 
-        if choice == 3:
+        elif choice ==3:
             category = input("Enter category (books, cards, cds): ").lower()
             index = int(input(f'Enter what you {category} you would like to update')) - 1
             title = input(f'Enter new {category} title')
@@ -28,13 +28,13 @@ def main():
             genre = input(f'Enter new {category} genre: ')
             Collection.update_item(category, index, title, author, genre)
 
-        if choice == 4:
+        elif choice ==4:
             category = input('Enter category (books, cards, cds): ').lower()
             index = int(input(f'Enter {category} to delete: ')) - 1
             Collection.delete_item(category, index)
 
 
-        if choice == 5:
+        if choice ==5:
             print('Thank you for using my app!')
             break
 
