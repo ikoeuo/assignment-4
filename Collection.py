@@ -43,8 +43,14 @@ def update_item(category, index, title, author, genre):
         print(f'{category} has been updated')
 
     else:
-        print{f'Invalid {category}'}
+        print(f'Invalid {category}')
     
 
 def delete_item(category, index):
-    pass
+    items = data[category]
+    if 0 <= index < len(items):
+        del items[index]
+        save_data()
+        print(f'{category} has been deleted.')
+    else:
+        print(f'Invalid {category}')
